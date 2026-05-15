@@ -1,37 +1,35 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
+/* global.scss  ─  add these lines to your existing src/global.scss */
 
-/* Core CSS required for Ionic components to work properly */
-@import "@ionic/angular/css/core.css";
+/* ── Sora font (add to index.html <head> instead if you prefer) ── */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap');
 
-/* Basic CSS for apps built with Ionic */
-@import "@ionic/angular/css/normalize.css";
-@import "@ionic/angular/css/structure.css";
-@import "@ionic/angular/css/typography.css";
-@import "@ionic/angular/css/display.css";
+/* ── Base overrides ── */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-/* Optional CSS utils that can be commented out */
-@import "@ionic/angular/css/padding.css";
-@import "@ionic/angular/css/float-elements.css";
-@import "@ionic/angular/css/text-alignment.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
+ion-content {
+  --background: #040d08; // fallback dark green
+}
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
+/* ── Remove default ion-input underline / box ── */
+ion-input.glass-input {
+  --highlight-color-focused: rgba(29, 158, 117, 0.6);
+  --highlight-color-valid:   rgba(29, 158, 117, 0.4);
+  --highlight-color-invalid: rgba(226, 75, 74, 0.6);
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+/* ── ion-button resets ── */
+ion-button.g-btn {
+  margin: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  height: 52px;
+}
+
+/* ── Scrollbar hide on desktop preview ── */
+::-webkit-scrollbar { display: none; }

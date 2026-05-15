@@ -1,20 +1,80 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header class="dash-header ion-no-border">
+  <ion-toolbar class="dash-toolbar">
+    <ion-title class="dash-brand">DigiPermit</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="icon-btn" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="dash-content">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="glow glow--top-right"></div>
+  <div class="glow glow--bottom-left"></div>
+
+  <div class="welcome-section">
+    <p class="welcome-name">Welcome back, {{ userName }}</p>
+    <p class="welcome-sub">Here's what's happening today</p>
   </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <p class="stat-num">9,842</p>
+      <p class="stat-lbl">Valid permits</p>
+      <p class="stat-trend trend-up">↑ 20.4%</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-num">1,203</p>
+      <p class="stat-lbl">Expired</p>
+      <p class="stat-trend trend-down">↓ 5.7%</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-num">342</p>
+      <p class="stat-lbl">Verified today</p>
+      <p class="stat-trend trend-up">↑ 12.1%</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-num">18</p>
+      <p class="stat-lbl">Flagged</p>
+      <p class="stat-trend trend-down">↑ 3</p>
+    </div>
+  </div>
+
+  <p class="section-label">Quick actions</p>
+
+  <div class="action-card action-primary" (click)="verifyPermit()">
+    <div class="action-icon-wrap action-icon-green">
+      <ion-icon name="scan-outline"></ion-icon>
+    </div>
+    <div class="action-text">
+      <p class="action-title">Verify a permit</p>
+      <p class="action-sub">Scan QR or enter number</p>
+    </div>
+    <ion-icon name="chevron-forward-outline" class="action-arrow"></ion-icon>
+  </div>
+
+  <div class="action-card action-secondary" (click)="viewPermits()">
+    <div class="action-icon-wrap action-icon-ghost">
+      <ion-icon name="list-outline"></ion-icon>
+    </div>
+    <div class="action-text">
+      <p class="action-title">View all permits</p>
+      <p class="action-sub">Browse the registry</p>
+    </div>
+    <ion-icon name="chevron-forward-outline" class="action-arrow action-arrow--muted"></ion-icon>
+  </div>
+
+  <div class="action-card action-secondary" (click)="recentActivity()">
+    <div class="action-icon-wrap action-icon-ghost">
+      <ion-icon name="time-outline"></ion-icon>
+    </div>
+    <div class="action-text">
+      <p class="action-title">Recent activity</p>
+      <p class="action-sub">Your last verifications</p>
+    </div>
+    <ion-icon name="chevron-forward-outline" class="action-arrow action-arrow--muted"></ion-icon>
+  </div>
+
 </ion-content>

@@ -1,27 +1,185 @@
-#container {
-  text-align: center;
+// home.page.scss
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+/* ── Header / Toolbar ── */
+.dash-header {
+  --background: transparent;
 }
 
-#container strong {
+.dash-toolbar {
+  --background: linear-gradient(135deg, #0a3d26 0%, #0F6E56 100%);
+  --border-width: 0;
+  box-shadow: 0 2px 16px rgba(10, 61, 38, 0.25);
+}
+
+.dash-brand {
+  font-family: 'Sora', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.icon-btn {
+  --color: rgba(255, 255, 255, 0.80);
+  font-size: 22px;
+}
+
+/* ── Content background (white) ── */
+.dash-content {
+  --background: #f5f7f5;
+}
+
+/* Remove glow blobs */
+.glow { display: none; }
+
+/* ── Welcome section ── */
+.welcome-section {
+  padding: 24px 20px 4px;
+}
+
+.welcome-name {
+  font-family: 'Sora', sans-serif;
   font-size: 20px;
-  line-height: 26px;
+  font-weight: 600;
+  color: #0a3d26;
+  letter-spacing: -0.02em;
+  margin: 0 0 4px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
+.welcome-sub {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  color: #6b7c74;
   margin: 0;
 }
 
-#container a {
-  text-decoration: none;
+/* ── Stats grid ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 16px 20px;
 }
+
+.stat-card {
+  background: linear-gradient(135deg, #0a3d26 0%, #0F6E56 100%);
+  border-radius: 16px;
+  padding: 16px 14px 14px;
+  box-shadow: 0 4px 16px rgba(10, 61, 38, 0.20);
+}
+
+.stat-num {
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+  margin: 0 0 2px;
+}
+
+.stat-lbl {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.60);
+  margin: 0 0 6px;
+}
+
+.stat-trend {
+  font-family: 'Sora', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.trend-up   { color: #a8f0d4; }
+.trend-down { color: #ffaaaa; }
+
+/* ── Section label ── */
+.section-label {
+  font-family: 'Sora', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #9aab9f;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 20px 10px;
+  margin: 0;
+}
+
+/* ── Action cards ── */
+.action-card {
+  margin: 0 20px 10px;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.action-card:active {
+  opacity: 0.85;
+  transform: scale(0.98);
+}
+
+.action-primary {
+  background: #ffffff;
+  border: 1.5px solid #1D9E75;
+  box-shadow: 0 2px 12px rgba(29, 158, 117, 0.12);
+}
+
+.action-secondary {
+  background: #ffffff;
+  border: 1px solid #e4ebe7;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.action-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 22px;
+}
+
+.action-icon-green {
+  background: #e1f5ee;
+  color: #0F6E56;
+}
+
+.action-icon-ghost {
+  background: #f0f4f2;
+  color: #4a7060;
+}
+
+.action-text {
+  flex: 1;
+}
+
+.action-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0a2e1c;
+  letter-spacing: -0.01em;
+  margin: 0 0 2px;
+}
+
+.action-sub {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  color: #7a9486;
+  margin: 0;
+}
+
+.action-arrow {
+  font-size: 16px;
+  color: #b0c8bc;
+  flex-shrink: 0;
+}
+
+.action-arrow--muted { color: #ccddd5; }

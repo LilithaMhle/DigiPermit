@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true" class="login-content">
+
+  <div class="glow glow--top-right"></div>
+
+  <div class="auth-hero">
+    <div class="auth-logo">
+      <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="22" height="28" rx="4" fill="rgba(255,255,255,0.92)"/>
+        <circle cx="29" cy="29" r="9" fill="#1D9E75"/>
+        <path d="M25 29l2.8 2.8 5.2-5.6" stroke="#fff" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2 class="auth-app-name">DigiPermit</h2>
+    <p class="auth-app-sub">Sign in to continue</p>
+  </div>
+
+  <div class="auth-sheet">
+    <h1 class="sheet-heading">Welcome back</h1>
+    <p class="sheet-desc">Enter your credentials to access the system</p>
+
+    <div class="field">
+      <label class="field-label">Email</label>
+      <ion-input
+        class="glass-input"
+        type="email"
+        placeholder="officer@homeaffairs.gov.za"
+        [(ngModel)]="email"
+        autocomplete="email">
+      </ion-input>
+    </div>
+
+    <div class="field">
+      <label class="field-label">Password</label>
+      <ion-input
+        class="glass-input"
+        type="password"
+        placeholder="••••••••"
+        [(ngModel)]="password">
+      </ion-input>
+    </div>
+
+    <p class="error-msg" *ngIf="errorMsg">{{ errorMsg }}</p>
+
+    <ion-button
+      class="g-btn"
+      expand="block"
+      (click)="login()"
+      [disabled]="loading">
+      <ion-spinner *ngIf="loading" name="crescent" slot="start"></ion-spinner>
+      {{ loading ? 'Signing in...' : 'Sign in' }}
+    </ion-button>
+
+    <div class="or-row">
+      <div class="or-line"></div>
+      <span class="or-text">or</span>
+      <div class="or-line"></div>
+    </div>
+
+    <p class="auth-link">
+      Don't have an account?
+      <a routerLink="/signup">Sign up</a>
+    </p>
+  </div>
+
+</ion-content>
